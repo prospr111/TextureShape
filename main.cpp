@@ -9,51 +9,30 @@ int main()
 	//-----------------------INITIALIZE----------------
 	sf::ContextSettings settings;
 	settings.antialiasingLevel = 8;
-	sf::RenderWindow window(sf::VideoMode(800, 600), "RPG Game",sf::Style::Default,settings);
-	sf::CircleShape shape(50.0f,3);
-	shape.setFillColor(sf::Color::Red);
-	shape.setPosition(sf::Vector2f(100.f, 100.f));
-	shape.setOutlineThickness(10);
-	shape.setOutlineColor(sf::Color::Magenta);
-
-	sf::RectangleShape rectangle(sf::Vector2f(100.f, 100.f));
-	
-	rectangle.setSize(sf::Vector2f(100.f, 50.f));
-	
-	rectangle.setPosition(150.f, 150.f);
-	rectangle.setOrigin(sf::Vector2f(rectangle.getSize() / 2.0f));
-	rectangle.setRotation(45);
-	rectangle.setOutlineThickness(5);
-	rectangle.setOutlineColor(sf::Color::Black);
-	rectangle.setFillColor(sf::Color::Yellow);
-	
-	sf::CircleShape shape2(80.0f, 8);
-	shape2.setFillColor(sf::Color::Red);
-	shape2.setPosition(200.0f, 200.0f);
-	shape2.setOutlineThickness(5);
-	shape2.setOutlineColor(sf::Color::Black);
-	
-	sf::ConvexShape convex;
-	convex.setPosition(250.0f, 250.0f);
-	convex.setFillColor(sf::Color::Blue);
-	convex.setPointCount(4);
-	convex.setPoint(0, sf::Vector2f(30.0f, 30.0f));
-	convex.setPoint(1, sf::Vector2f(100.0f, 100.0f));
-	convex.setPoint(2, sf::Vector2f(100.0f, 150.0f));
-	convex.setPoint(0, sf::Vector2f(30.0f, 150.0f));
-	
-	sf::RectangleShape line(sf::Vector2f(150.0f, 5.0f));
-	line.setPosition(150.0f, 150.0f);
-	line.rotate(45.0f);
-
-	sf::Vertex line2[] =
-	{
-		sf::Vertex(sf::Vector2f(20.f,20.f)),
-		sf::Vertex(sf::Vector2f(150.f,150.f))
-
-	};
-
+	sf::RenderWindow window(sf::VideoMode(800, 600), "RPG Game",sf::Style::Default,settings);	
 	//-----------------------INITIALIZE----------------
+	//-----------------LOAD----------------------------
+	sf::Texture playerTexture;
+	sf::Sprite playerSprite;
+
+	if (playerTexture.loadFromFile("Assets/player/textures/spritesheet.png"))
+	{
+		std::cout << "Player image Loaded!" << std::endl;
+		playerSprite.setTexture(playerTexture);
+
+		int XIndex = 0;
+		int YIndex = 0;
+
+		playerSprite.setTextureRect(sf::IntRect(XIndex * 64, YIndex *  64, 64, 64));
+		playerSprite.scale(sf::Vector2f(2, 2));
+	}
+	else
+	{
+		std::cout << "Player image failed to Loaded!" << std::endl;
+	}
+
+	
+	//-----------------LOAD----------------------------
 
 	// main game loop
 	while (window.isOpen())
@@ -65,19 +44,35 @@ int main()
 		{
 			if (event.type == sf::Event::Closed)
 				window.close();
+			
 		}
+
+		sf::Vector2f position = playerSprite.getPosition();
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+			playerSprite.setPosition(position + sf::Vector2f(1, 0));
+
+		
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+			playerSprite.setPosition(position + sf::Vector2f(-1, 0));
+
+		
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
+			playerSprite.setPosition(position +sf::Vector2f(0, -1));
+
+		
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+			playerSprite.setPosition(position + sf::Vector2f(0, 1));
+
+		
 		//--------------------UPDATE--------------------
 
 		//---------------------DRAW---------------------
 
 		//---------------------DRAW---------------------
 		window.clear(sf::Color::Green);
-		window.draw(shape);
-		window.draw(rectangle);
-		window.draw(shape2);
-		window.draw(convex);
-		window.draw(line);
-		window.draw(line2, 2, sf::Lines);
+		
+		window.draw(playerSprite);
+
 		window.display();
 	}
 

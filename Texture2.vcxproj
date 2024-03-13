@@ -73,30 +73,22 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ExternalIncludePath>C:\Users\Gebruiker\source\repos\Texture2\SDL\include;$(ExternalIncludePath)</ExternalIncludePath>
     <LibraryWPath>C:\Users\Gebruiker\source\repos\Texture2\SDL\lib;$(LibraryWPath)</LibraryWPath>
-    <OutDir>$(SolutionDir)Build\$(Platform)\$(Configuration)\bin</OutDir>
-    <IntDir>$(SolutionDir)Build\$(Platform)\$(Configuration)\Intermediate</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ExternalIncludePath>C:\Users\Gebruiker\source\repos\Texture2\SDL\include;$(ExternalIncludePath)</ExternalIncludePath>
     <LibraryWPath>C:\Users\Gebruiker\source\repos\Texture2\SDL\lib;$(LibraryWPath)</LibraryWPath>
-    <OutDir>$(SolutionDir)Build\$(Platform)\$(Configuration)\bin</OutDir>
-    <IntDir>$(SolutionDir)Build\$(Platform)\$(Configuration)\Intermediate</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ExternalIncludePath>C:\Users\Gebruiker\source\repos\Texture2Game\Dependency\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <ExternalIncludePath>C:\Users\Gebruiker\source\repos\Texture2\SDL\include;$(ExternalIncludePath)</ExternalIncludePath>
     <LibraryWPath>C:\Users\Gebruiker\source\repos\Texture2\SDL\lib;$(LibraryWPath)</LibraryWPath>
-    <IncludePath>C:\Users\Gebruiker\source\repos\Texture2\SFML\include;$(SolutionDir)SMFL\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\Gebruiker\source\repos\Texture2Game\Dependency\include\SFML;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\Gebruiker\source\repos\Texture2Game\Dependency\lib;$(LibraryPath)</LibraryPath>
-    <OutDir>$(SolutionDir)Build\$(Platform)\$(Configuration)\bin</OutDir>
-    <IntDir>$(SolutionDir)Build\$(Platform)\$(Configuration)\Intermediate</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ExternalIncludePath>C:\Users\Gebruiker\source\repos\Texture2\SDL\include;$(ExternalIncludePath)</ExternalIncludePath>
     <LibraryWPath>C:\Users\Gebruiker\source\repos\Texture2\SDL\lib;$(LibraryWPath)</LibraryWPath>
     <IncludePath>C:\Users\Gebruiker\source\repos\Texture2\SFML\include;$(SolutionDir)SMFL\include;$(IncludePath)</IncludePath>
     <LibraryPath>C:\Users\Gebruiker\source\repos\Texture2\SFML\lib;$(SolutionDir)SMFL\lib;$(LibraryPath)</LibraryPath>
-    <OutDir>$(SolutionDir)Build\$(Platform)\$(Configuration)\bin</OutDir>
-    <IntDir>$(SolutionDir)Build\$(Platform)\$(Configuration)\Intermediate</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -138,12 +130,12 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);SFML_STATIC;%(PreprocessorDefinitions);SFML_STATIC;SFML_STATIC;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Users\Gebruiker\source\repos\Texture2\SDLImage\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Gebruiker\source\repos\Texture2\SDLImage\include;C:\Users\Gebruiker\source\repos\Texture2Game\Dependency\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\Gebruiker\source\repos\Texture2\SDLImage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\Gebruiker\source\repos\Texture2Game\Dependency\lib;C:\Users\Gebruiker\source\repos\Texture2\SDLImage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-s-d.lib	;sfml-window-s-d.lib;sfml-system-s-d.lib;sfml-network-s-d.lib;sfml-audio-s-d.lib;opengl32.lib;freetype.lib;winmm.lib;gdi32.lib;openal32.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
