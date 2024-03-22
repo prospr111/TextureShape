@@ -1,4 +1,5 @@
 ﻿  main.cpp
+C:\Users\Gebruiker\source\repos\Texture2Game\main.cpp(130,10): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   Texture2.vcxproj -> C:\Users\Gebruiker\source\repos\Texture2Game\x64\Debug\Texture2.exe
   'pwsh.exe' is not recognized as an internal or external command,
   operable program or batch file.
