@@ -11,7 +11,9 @@ public:
 
 public:
 	sf::Sprite sprite;
+	sf::RectangleShape boundingRectangle;
 
+	sf::Vector2i size;
 private:
 	sf::Texture texture;
 	

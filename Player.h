@@ -12,12 +12,18 @@ public:
 	void Draw(sf::RenderWindow& window);
 
 public:
-	sf::Sprite sprite;
+	
+
+	sf::Vector2i size;
 private:
 	sf::Texture texture;
-	std::vector<sf::RectangleShape> bullets;
 
-	float bulletSpeed = 1.0f;
+	std::vector<sf::RectangleShape> bullets;
+	float bulletSpeed = 0.5f;
+	
+	sf::Sprite sprite;
+	sf::RectangleShape boundingRectangle;
+	
 	
 };
 
